@@ -1,0 +1,138 @@
+﻿apiVersion: app.kiegroup.org/v2
+kind: KieApp
+metadata:
+  creationTimestamp: '2021-07-09T14:29:47Z'
+  generation: 1
+  managedFields:
+    - apiVersion: app.kiegroup.org/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:environment': {}
+          'f:objects':
+            .: {}
+            'f:servers': {}
+      manager: Mozilla
+      operation: Update
+      time: '2021-07-09T14:29:47Z'
+    - apiVersion: app.kiegroup.org/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:app.kiegroup.org': {}
+        'f:spec':
+          'f:commonConfig': {}
+          'f:upgrades': {}
+        'f:status':
+          .: {}
+          'f:applied':
+            .: {}
+            'f:commonConfig':
+              .: {}
+              'f:adminPassword': {}
+              'f:adminUser': {}
+              'f:amqClusterPassword': {}
+              'f:amqPassword': {}
+              'f:applicationName': {}
+              'f:dbPassword': {}
+              'f:keyStorePassword': {}
+            'f:environment': {}
+            'f:objects':
+              .: {}
+              'f:console':
+                .: {}
+                'f:jvm':
+                  .: {}
+                  'f:javaInitialMemRatio': {}
+                  'f:javaMaxMemRatio': {}
+                'f:replicas': {}
+              'f:servers': {}
+            'f:upgrades': {}
+            'f:version': {}
+          'f:conditions': {}
+          'f:consoleHost': {}
+          'f:deployments':
+            .: {}
+            'f:starting': {}
+          'f:phase': {}
+          'f:version': {}
+      manager: kie-cloud-operator
+      operation: Update
+      time: '2021-07-11T18:44:08Z'
+  name: rhpam-trial
+  namespace: pam-project
+  resourceVersion: '642660'
+  selfLink: /apis/app.kiegroup.org/v2/namespaces/pam-project/kieapps/rhpam-trial
+  uid: 0f2cce5b-f78f-40ea-82bc-c58532e18261
+spec:
+  environment: rhpam-trial
+  objects:
+    servers:
+      - env:
+          - name: KIE_SERVER_KAFKA_EXT_BOOTSTRAP_SERVERS
+            value: 'my-cluster-kafka-brokers:9092'
+          - name: KIE_SERVER_KAFKA_EXT_ENABLED
+            value: 'TRUE'
+          - name: KIE_SERVER_KAFKA_EXT_GROUP_ID
+            value: vcoo
+        name: rhpam-trial
+status:
+  applied:
+    commonConfig:
+      adminPassword: RedHat
+      adminUser: adminUser
+      amqClusterPassword: RedHat
+      amqPassword: RedHat
+      applicationName: rhpam-trial
+      dbPassword: RedHat
+      keyStorePassword: RedHat
+    environment: rhpam-trial
+    objects:
+      console:
+        jvm:
+          javaInitialMemRatio: 25
+          javaMaxMemRatio: 80
+        replicas: 1
+      servers:
+        - deployments: 1
+          env:
+            - name: KIE_SERVER_KAFKA_EXT_BOOTSTRAP_SERVERS
+              value: 'my-cluster-kafka-brokers:9092'
+            - name: KIE_SERVER_KAFKA_EXT_ENABLED
+              value: 'TRUE'
+            - name: KIE_SERVER_KAFKA_EXT_GROUP_ID
+              value: vcoo
+          jvm:
+            javaInitialMemRatio: 25
+            javaMaxMemRatio: 80
+          name: rhpam-trial
+          replicas: 1
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2Gi
+            requests:
+              cpu: 750m
+              memory: 1Gi
+    upgrades: {}
+    version: 7.11.0
+  conditions:
+    - lastTransitionTime: '2021-07-09T14:29:48Z'
+      status: 'True'
+      type: Provisioning
+      version: 7.11.0
+    - lastTransitionTime: '2021-07-09T14:29:49Z'
+      status: 'True'
+      type: Deployed
+      version: 7.11.0
+  consoleHost: >-
+    https://rhpam-trial-rhpamcentr-pam-project.apps.cluster-c366.c366.sandbox1842.opentlc.com
+  deployments:
+    starting:
+      - rhpam-trial-rhpamcentr
+      - rhpam-trial
+  phase: Deployed
+  version: 7.11.0
